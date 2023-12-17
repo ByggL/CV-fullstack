@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { ChakraProvider } from '@chakra-ui/react'
 
 
 function App() {
@@ -13,9 +14,19 @@ function App() {
       }
     )
   }, [])
-  
+
   return (
-    <div>App</div>
+    <ChakraProvider>
+      <div>
+        {(typeof backendData.users === 'undefined') ? (
+          <p>Loading API...</p>
+        ) : (
+          backendData.users.map((user, i) => {
+            <p key={i}>{user}</p>
+          })
+        )}
+      </div>
+    </ChakraProvider>
   )
 }
 
