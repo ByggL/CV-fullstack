@@ -1,13 +1,6 @@
 import React, {useEffect, useState} from 'react'
-import { Image, ChakraProvider, extendTheme, Heading, HStack, Center, Spacer, ColorModeScript } from '@chakra-ui/react'
+import { Image, ChakraProvider, Heading, HStack, Center, Spacer, Box } from '@chakra-ui/react'
 import {Header} from './Header.js'
-
-const config = {
-  initialColorMode: 'dark',
-  useSystemColorMode: false,
-}
-
-const theme = extendTheme({ config })
 
 
 function App() {
@@ -25,8 +18,7 @@ function App() {
 
   return (
     <>
-    <ColorModeScript initialColorMode={theme.config.initialColorMode}/>
-    <ChakraProvider theme={theme}>
+      <div class="me">
       <Center>
       <HStack>
           <Image
@@ -40,6 +32,7 @@ function App() {
           <Heading color="black" fontSize="7xl">Samuel Léobon</Heading>
       </HStack>
       </Center>   
+      </div>
       <div>
         {(typeof backendData.users === 'undefined') ? (
           <p>Loading API...</p>
@@ -49,7 +42,6 @@ function App() {
           })
         )}
       </div>
-    </ChakraProvider>
     </>
   )
 }
