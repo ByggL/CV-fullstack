@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { Image, ChakraProvider, Heading, HStack, Center, Spacer, Box } from '@chakra-ui/react'
+import { Image, Text, Heading, HStack, Center, Spacer, StackDivider, VStack } from '@chakra-ui/react'
 import {Header} from './Header.js'
 
 
@@ -16,11 +16,20 @@ function App() {
     )
   }, [])
 
+  const slanted1 = {
+    transform: 'rotate(65deg)',
+    backgroundColor: '#F2F2F2'
+  }
+
+  const slanted2 = {
+    transform: 'rotate(125deg)',
+    backgroundColor: '#F2F2F2'
+  }
   return (
     <>
-      <div class="me">
+      <Header/>
       <Center>
-      <HStack>
+      <HStack position="absolute" top="200%">
           <Image
           boxSize='25em'
           objectFit='cover'
@@ -29,10 +38,15 @@ function App() {
           borderRadius="50%"
           />
           <Spacer/>
-          <Heading color="black" fontSize="7xl">Samuel Léobon</Heading>
+          <VStack align="left" divider={<StackDivider borderColor='gray.200' />}>
+            <Heading color="black" fontSize="7xl">Samuel Léobon</Heading>
+            <Text>Futur étudiant en Mastère <i>Expert en développement Logiciel, Mobile & IOT</i> (20 ans)<br/>
+              à la recherche d’une alternance sur deux ans à partir d’octobre 2024.<br/>
+              Adaptable, ordonné, dynamique, impliqué. </Text>
+          </VStack>
+          
       </HStack>
       </Center>   
-      </div>
       <div>
         {(typeof backendData.users === 'undefined') ? (
           <p>Loading API...</p>
@@ -42,6 +56,8 @@ function App() {
           })
         )}
       </div>
+      <div style={slanted1}></div>
+      <div style={slanted2}></div>
     </>
   )
 }
