@@ -9,8 +9,21 @@ import {
   StackDivider,
   VStack,
   Box,
+  AbsoluteCenter,
+  Divider,
 } from "@chakra-ui/react";
 import { Header } from "./Header.js";
+
+function CategoryDivider(props) {
+  return (
+    <Box position="relative" padding="10">
+      <Divider size="2xl" />
+      <AbsoluteCenter bg="white" px="4" fontSize="xx-large" fontWeight="bold">
+        {props.name}
+      </AbsoluteCenter>
+    </Box>
+  );
+}
 
 function App() {
   const [backendData, setBackendData] = useState([{}]);
@@ -20,6 +33,7 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setBackendData(data);
+        console.log(data);
       });
   }, []);
 
@@ -35,45 +49,48 @@ function App() {
   return (
     <>
       <Header />
-      <Center>
-        <HStack position="absolute" top="200%">
-          <Box borderWidth="5px" borderRadius="50%" borderColor="#CF3333">
-            <Image
-              boxSize="25em"
-              objectFit="cover"
-              src="/Sleobon_portrait_carre.jpg"
-              alt="Samuel Léobon"
-              borderRadius="50%"
-            />
-          </Box>
+      <Box>
+        <Center>
+          <HStack position="relative" mt="10em" mb="10em">
+            <Box borderWidth="5px" borderRadius="50%" borderColor="#CF3333">
+              <Image
+                boxSize="25em"
+                objectFit="cover"
+                src="/Sleobon_portrait_carre.jpg"
+                alt="Samuel Léobon"
+                borderRadius="50%"
+              />
+            </Box>
 
-          <Spacer />
-          <VStack
-            align="left"
-            divider={<StackDivider borderColor="gray.200" />}
-            ml="20px"
-          >
-            <Heading color="black" fontSize="7xl">
-              Samuel Léobon
-            </Heading>
-            <Text>
-              Futur étudiant en Mastère{" "}
-              <i>Expert en développement Logiciel, Mobile & IOT</i> (20 ans)
-              <br />
-              à la recherche d’une alternance sur deux ans à partir d’octobre
-              2024.
-              <br />
-              Adaptable, ordonné, dynamique, impliqué.{" "}
-            </Text>
-          </VStack>
-        </HStack>
-      </Center>
+            <Spacer />
+            <VStack
+              align="left"
+              divider={<StackDivider borderColor="gray.200" />}
+              ml="20px"
+            >
+              <Heading color="black" fontSize="7xl">
+                Samuel Léobon
+              </Heading>
+              <Text>
+                Futur étudiant en Mastère{" "}
+                <i>Expert en développement Logiciel, Mobile & IOT</i> (20 ans)
+                <br />
+                à la recherche d’une alternance sur deux ans à partir d’octobre
+                2024.
+                <br />
+                Adaptable, ordonné, dynamique, impliqué.{" "}
+              </Text>
+            </VStack>
+          </HStack>
+        </Center>
+      </Box>
+      <CategoryDivider name="Formation" />
       <div>
-        {typeof backendData.users === "undefined" ? (
+        {typeof backendData.formations === "undefined" ? (
           <p>Loading API...</p>
         ) : (
-          backendData.users.map((user, i) => {
-            <p key={i}>{user}</p>;
+          backendData.formations.map((formation, i) => {
+            <p key={i}>{formation}</p>;
           })
         )}
       </div>
