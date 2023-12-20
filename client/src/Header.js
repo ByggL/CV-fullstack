@@ -5,26 +5,7 @@ export function Header() {
     return (
         <header>
             <Flex align="center" justify="space-between" bg='#CF3333'>
-            <Box m="20px">
-            <Breadcrumb color="#222222" separator="-">
-                <BreadcrumbItem>
-                  <BreadcrumbLink href='/'>Accueil</BreadcrumbLink>
-                </BreadcrumbItem>
-
-                <BreadcrumbItem>
-                  <BreadcrumbLink href='/formation'>Formation</BreadcrumbLink>
-                </BreadcrumbItem>
-
-                <BreadcrumbItem>
-                  <BreadcrumbLink href='/experience'>Expérience</BreadcrumbLink>
-                </BreadcrumbItem>
-
-                <BreadcrumbItem>
-                  <BreadcrumbLink href='/contact'>Contact</BreadcrumbLink>
-                </BreadcrumbItem>
-            </Breadcrumb>
-            </Box>
-            <Center>
+            <Center m="20px">
             <Heading color="#222222">Samuel Léobon</Heading>
             </Center>
             <HStack m="20px">
