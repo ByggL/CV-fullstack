@@ -66,7 +66,10 @@ function App() {
   }
   return (
     <>
-      <Header />
+      <header>
+        <Header />
+      </header>
+
       <Box>
         <Center>
           <HStack position="relative" mt="10em" mb="10em">
