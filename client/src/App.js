@@ -25,6 +25,13 @@ function CategoryDivider(props) {
   );
 }
 
+function _renderFormations(data) {
+  if (!typeof data === undefined)
+    return Object.entries(data.formations).map((formation) => {
+      return <Heading textColor="black">{formation.data}</Heading>;
+    });
+}
+
 function App() {
   const [backendData, setBackendData] = useState([{}]);
 
@@ -34,6 +41,7 @@ function App() {
       .then((data) => {
         setBackendData(data);
         console.log(data);
+        console.log(data.formations);
       });
   }, []);
 
@@ -46,6 +54,7 @@ function App() {
     transform: "rotate(125deg)",
     backgroundColor: "#F2F2F2",
   };
+
   return (
     <>
       <Header />
@@ -84,16 +93,25 @@ function App() {
           </HStack>
         </Center>
       </Box>
-      <CategoryDivider name="Formation" />
+      <div>
+        <CategoryDivider name="Formation" />
+        <Box>{_renderFormations(backendData)}</Box>
+        <CategoryDivider name="Expérience" />
+
+        <CategoryDivider name="Compétences" />
+
+        <CategoryDivider name="Intérêts" />
+      </div>
       <div>
         {typeof backendData.formations === "undefined" ? (
           <p>Loading API...</p>
         ) : (
           backendData.formations.map((formation, i) => {
-            <p key={i}>{formation}</p>;
+            <Heading textColor="black">{formation.name}</Heading>;
           })
         )}
       </div>
+      <pre>{JSON.stringify(backendData, null, 2)}</pre>
       <div style={slanted1}></div>
       <div style={slanted2}></div>
     </>
