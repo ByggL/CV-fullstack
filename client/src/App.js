@@ -34,12 +34,14 @@ function _renderFormations(data) {
 
 function App() {
   const [backendData, setBackendData] = useState([{}]);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("/api")
       .then((response) => response.json())
       .then((data) => {
         setBackendData(data);
+        setLoading(false);
         console.log(data);
         console.log(data.formations);
       });
@@ -55,6 +57,13 @@ function App() {
     backgroundColor: "#F2F2F2",
   };
 
+  if (isLoading) {
+    return (
+      <Heading className="App" size="7xl">
+        Loading...
+      </Heading>
+    );
+  }
   return (
     <>
       <Header />
