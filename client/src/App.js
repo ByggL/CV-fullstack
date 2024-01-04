@@ -11,8 +11,17 @@ import {
 	Box,
 	AbsoluteCenter,
 	Divider,
+	UnorderedList,
+	ListItem,
 } from "@chakra-ui/react";
 import { Header } from "./Header.js";
+import "./App.css";
+import {
+	_renderExperience,
+	_renderFormations,
+	_renderInterests,
+	_renderSkills,
+} from "./renderData.js";
 
 function CategoryDivider(props) {
 	return (
@@ -21,19 +30,13 @@ function CategoryDivider(props) {
 			<AbsoluteCenter
 				bg="white"
 				px="4"
-				fontSize="xx-large"
-				fontWeight="bold">
+				fontSize="xxx-large"
+				fontWeight="bold"
+				fontFamily="Liberation Mono">
 				{props.name}
 			</AbsoluteCenter>
 		</Box>
 	);
-}
-
-function _renderFormations(data) {
-	if (!typeof data === undefined)
-		return Object.entries(data.formations).map((formation) => {
-			return <Heading textColor="black">{formation.data}</Heading>;
-		});
 }
 
 function App() {
@@ -47,7 +50,8 @@ function App() {
 				setBackendData(data);
 				setLoading(false);
 				console.log(data);
-				console.log(data.formations);
+				console.log(data.skills);
+				console.log(Object.entries(data.skills));
 			});
 	}, []);
 
@@ -95,10 +99,14 @@ function App() {
 							align="left"
 							divider={<StackDivider borderColor="gray.200" />}
 							ml="20px">
-							<Heading color="black" fontSize="7xl">
+							<Heading
+								color="black"
+								fontSize="7xl"
+								fontFamily="Liberation Mono"
+								fontWeight="bold">
 								Samuel Léobon
 							</Heading>
-							<Text>
+							<Text fontSize="large">
 								Futur étudiant en Mastère{" "}
 								<i>
 									Expert en développement Logiciel, Mobile &
@@ -119,19 +127,11 @@ function App() {
 				<CategoryDivider name="Formation" />
 				<Box>{_renderFormations(backendData)}</Box>
 				<CategoryDivider name="Expérience" />
-
+				<Box>{_renderExperience(backendData)}</Box>
 				<CategoryDivider name="Compétences" />
-
+				<Box>{_renderSkills(backendData)}</Box>
 				<CategoryDivider name="Intérêts" />
-			</div>
-			<div>
-				{typeof backendData.formations === "undefined" ? (
-					<p>Loading API...</p>
-				) : (
-					backendData.formations.map((formation, i) => {
-						<Heading textColor="black">{formation.name}</Heading>;
-					})
-				)}
+				<Box>{_renderInterests(backendData)}</Box>
 			</div>
 			<pre>{JSON.stringify(backendData, null, 2)}</pre>
 			<div style={slanted1}></div>

@@ -47,11 +47,11 @@ const infos = {
 		},
 		{
 			name: "Jeu de rôle sur table en association",
-			context: "Héritiers de Dumnacus",
+			context: "(Héritiers de Dumnacus)",
 		},
 		{
 			name: "Worldbuilding",
-			context: "projet communautaire The World Beyond The Ice Wall",
+			context: "(projet communautaire The World Beyond The Ice Wall)",
 		},
 	],
 	languages: ["Français natif", "Anglais C2", "Espagnol A2"],
