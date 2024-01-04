@@ -11,8 +11,6 @@ import {
 	Box,
 	AbsoluteCenter,
 	Divider,
-	UnorderedList,
-	ListItem,
 } from "@chakra-ui/react";
 import { Header } from "./Header.js";
 import "./App.css";
