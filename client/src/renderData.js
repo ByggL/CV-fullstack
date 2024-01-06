@@ -5,20 +5,22 @@ export function _renderFormations(data) {
 	// if (!typeof data !== undefined)
 	let formationsformatees = data.formations.map(function (formation) {
 		return (
-			<div style={{ marginLeft: 2 + "em" }}>
-				<Heading textColor="black" ml="2em">
+			<ListItem ml="2em">
+				<Heading textColor="black">
 					{formation.name} | {formation.dates}
 				</Heading>
 				<br />
-				<div style={{ marginLeft: 8 + "em" }}>
-					<p>{formation.description}</p>
-				</div>
+				<p>{formation.description}</p>
 				<br />
-			</div>
+			</ListItem>
 		);
 	});
 
-	return formationsformatees;
+	return (
+		<UnorderedList>
+			{formationsformatees}
+		</UnorderedList>
+	);
 }
 
 export function _renderExperience(data) {
