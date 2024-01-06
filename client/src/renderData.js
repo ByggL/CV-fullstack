@@ -27,45 +27,49 @@ export function _renderExperience(data) {
 	// if (!typeof data !== undefined)
 	let experiencesformatees = data.experience.map(function (exp) {
 		return (
-			<div style={{ marginLeft: 2 + "em" }}>
-				<Heading textColor="black" ml="2em">
+			<ListItem ml="2em">
+				<Heading textColor="black">
 					{exp.company} | {exp.dates}
 				</Heading>
-				<p>{exp.jobTitle}</p>
+				<p style={{fontWeight: "bold"}}>{exp.jobTitle}</p>
 				<p style={{ whiteSpace: "pre-line" }}>{exp.description}</p>
 				<br />
-			</div>
+			</ListItem>
 		);
 	});
 
-	return experiencesformatees;
+	return (
+		<UnorderedList>
+			{experiencesformatees}
+		</UnorderedList>
+	);
 }
 
 export function _renderSkills(data) {
-	// if (!typeof data !== undefined)
-	let competencesformatees;
-	for (const [key, skillgroup] of Object.entries(data.skills)) {
-		console.log(key);
-		let skillsresult = skillgroup.map(function (subskill) {
+	let competencesformatees = Object.entries(data.skills).map( function (skillentry) {
+		let skillsresult = skillentry[1].map(function (subskill) {
 			return <ListItem>{subskill}</ListItem>;
 		});
 
-		competencesformatees += (
-			<div style={{ marginLeft: 2 + "em" }}>
-				<Heading textColor="black" ml="2em">
-					{key}
+		return (
+			<ListItem ml="2em">
+				<Heading textColor="black">
+					{skillentry[0]}
 				</Heading>
-				{/*<UnorderedList>{skillsresult}</UnorderedList>*/}
+				<UnorderedList ml="2em">{skillsresult}</UnorderedList>
 				<br />
-			</div>
+			</ListItem>
 		);
-	}
+	});
 
-	return competencesformatees;
+	return (
+		<UnorderedList>
+			{competencesformatees}
+		</UnorderedList>
+	);
 }
 
 export function _renderInterests(data) {
-	// if (!typeof data !== undefined)
 	let interetsformatees = data.interests.map(function (interest) {
 		return (
 			<ListItem>
@@ -77,8 +81,27 @@ export function _renderInterests(data) {
 
 	return (
 		<div style={{ marginLeft: 2 + "em" }}>
+			<Heading textColor="black">Intérêts</Heading>
 			<UnorderedList>{interetsformatees}</UnorderedList>
 			<br />
 		</div>
 	);
+}
+
+export function _renderLanguages(data) {
+	let langagesformates = data.languages.map(function(language) {
+		return (
+			<ListItem>
+				{language}
+			</ListItem>
+		);
+	});
+
+	return (
+		<div style={{ marginLeft: 2 + "em" }}>
+			<Heading textColor="black">Langues</Heading>
+			<UnorderedList>{langagesformates}</UnorderedList>
+			<br />
+		</div>
+	)
 }

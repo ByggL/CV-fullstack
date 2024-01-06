@@ -11,6 +11,7 @@ import {
 	Box,
 	AbsoluteCenter,
 	Divider,
+	Flex,
 } from "@chakra-ui/react";
 import { Header } from "./Header.js";
 import "./App.css";
@@ -19,6 +20,7 @@ import {
 	_renderFormations,
 	_renderInterests,
 	_renderSkills,
+	_renderLanguages,
 } from "./renderData.js";
 
 function CategoryDivider(props) {
@@ -47,7 +49,6 @@ function App() {
 			.then((data) => {
 				setBackendData(data);
 				setLoading(false);
-				console.log(data);
 				console.log(data.skills);
 				console.log(Object.entries(data.skills));
 			});
@@ -128,10 +129,14 @@ function App() {
 				<Box>{_renderExperience(backendData)}</Box>
 				<CategoryDivider name="Compétences" />
 				<Box>{_renderSkills(backendData)}</Box>
-				<CategoryDivider name="Intérêts" />
-				<Box>{_renderInterests(backendData)}</Box>
+				<CategoryDivider name="Autres" />
+				<Flex>
+					<Box float="left" width="50%">{_renderInterests(backendData)}</Box>
+					<Box float="left" width="50%">{_renderLanguages(backendData)}</Box>
+				</Flex>
+
 			</div>
-			<pre>{JSON.stringify(backendData, null, 2)}</pre>
+			{/*<pre>{JSON.stringify(backendData, null, 2)}</pre>*/}
 			<div style={slanted1}></div>
 			<div style={slanted2}></div>
 		</>
