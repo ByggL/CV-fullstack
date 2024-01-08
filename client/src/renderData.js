@@ -64,9 +64,7 @@ export function _renderExperience(data) {
 }
 
 export function _renderSkills(data) {
-	let competencesformatees = Object.entries(data.skills).map(function (
-		skillentry
-	) {
+	let competencesformatees = Object.entries(data.skills).map(function (skillentry) {
 		let skillsresult = skillentry[1].map(function (subskill) {
 			return <ListItem>{subskill}</ListItem>;
 		});

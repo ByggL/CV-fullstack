@@ -73,9 +73,7 @@ function App() {
 	}
 	return (
 		<>
-			<header>
-				<Header />
-			</header>
+			<Header />
 
 			<Box>
 				<Center>
