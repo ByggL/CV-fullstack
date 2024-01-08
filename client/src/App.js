@@ -131,10 +131,13 @@ function App() {
 				<Box>{_renderSkills(backendData)}</Box>
 				<CategoryDivider name="Autres" />
 				<Flex>
-					<Box float="left" width="50%">{_renderInterests(backendData)}</Box>
-					<Box float="left" width="50%">{_renderLanguages(backendData)}</Box>
+					<Box float="left" width="50%">
+						{_renderInterests(backendData)}
+					</Box>
+					<Box float="left" width="50%">
+						{_renderLanguages(backendData)}
+					</Box>
 				</Flex>
-
 			</div>
 			{/*<pre>{JSON.stringify(backendData, null, 2)}</pre>*/}
 			<div style={slanted1}></div>
