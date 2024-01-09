@@ -145,7 +145,6 @@ function Home() {
 			{/*<pre>{JSON.stringify(backendData, null, 2)}</pre>*/}
 			<div style={slanted1}></div>
 			<div style={slanted2}></div>
-			<Footer />
 		</>
 	);
 }

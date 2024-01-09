@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 import Home from "./pages/Home";
 import Formation from "./pages/Formation";
 import Experience from "./pages/Experience";
@@ -19,6 +20,7 @@ function App() {
 				<Route path="/competences" element={<Competences />} />
 				<Route path="/autres" element={<Autres />} />
 			</Routes>
+			<Footer />
 		</BrowserRouter>
 	);
 }
