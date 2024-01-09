@@ -64,8 +64,8 @@ export function _renderExperience(data) {
 }
 
 export function _renderSkills(data) {
-	let competencesformatees = Object.entries(data.skills).map(function (skillentry) {
-		let skillsresult = skillentry[1].map(function (subskill) {
+	let competencesformatees = data.skills.map(function (skillentry) {
+		let skillsresult = skillentry.list.map(function (subskill) {
 			return <ListItem>{subskill}</ListItem>;
 		});
 
@@ -75,7 +75,7 @@ export function _renderSkills(data) {
 					<Heading
 						textColor="black"
 						textDecoration="underline #CF3333">
-						{skillentry[0]}
+						{skillentry.title}
 					</Heading>
 					<br />
 					<UnorderedList ml="2em">{skillsresult}</UnorderedList>

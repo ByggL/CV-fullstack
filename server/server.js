@@ -40,12 +40,24 @@ const infos = {
 			logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Verisure_Logo_-_2021-07-16.png",
 		},
 	],
-	skills: {
-		POO: ["C++", "C#", "Java"],
-		Web: ["HTML/CSS", "JavaScript", "PHP", "Astro"],
-		BDD: ["SQL", "PostgreSQL"],
-		Autres: ["Python", "GitHub"],
-	},
+	skills: [
+		{
+			title: "POO",
+			list: ["C++", "C#", "Java"],
+		},
+		{
+			title: "Web",
+			list: ["HTML/CSS", "JavaScript", "PHP", "Astro", "React"],
+		},
+		{
+			title: "BDD",
+			list: ["SQL", "PostgreSQL"],
+		},
+		{
+			title: "Autres",
+			list: ["Python", "GitHub"],
+		},
+	],
 	interests: [
 		{
 			name: "Développement de jeux vidéos en amateur",
