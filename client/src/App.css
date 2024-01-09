@@ -40,3 +40,11 @@
 p {
 	font-family: "Liberation Sans";
 }
+
+svg > path {
+	transition: fill 0.3s ease-out;
+}
+
+svg:hover > path {
+	fill: white;
+}
