@@ -14,6 +14,7 @@ import {
 	Flex,
 } from "@chakra-ui/react";
 import { Header } from "./Header.js";
+import { Footer } from "./Footer.js";
 import "./App.css";
 import {
 	_renderExperience,
@@ -140,6 +141,7 @@ function App() {
 			{/*<pre>{JSON.stringify(backendData, null, 2)}</pre>*/}
 			<div style={slanted1}></div>
 			<div style={slanted2}></div>
+			<Footer />
 		</>
 	);
 }
