@@ -1,4 +1,4 @@
-import { Box, Text, Center, HStack, AbsoluteCenter } from "@chakra-ui/react";
+import { Box, Center, HStack } from "@chakra-ui/react";
 import React from "react";
 
 export function Footer() {

@@ -1,7 +1,12 @@
+html {
+	height: 100%;
+}
+
 .App {
 	text-align: center;
-	position: relative;
-	height: 100%;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
 }
 
 .App-logo {
@@ -51,8 +56,27 @@ svg:hover > path {
 	fill: white;
 }
 
+.content {
+	flex: 1;
+}
+
 footer {
-	margin-top: 0;
-	margin-bottom: -10px;
-	padding-bottom: 5px;
+	height: 50px; /* the footer's total height */
+}
+
+#name,
+#ContactCommentt {
+	width: 80%;
+	border: solid 1px #cf3333;
+	border-radius: 10px;
+	text-align: center;
+}
+
+label {
+	font-size: x-large;
+	font-weight: bold;
+}
+
+#submit {
+	margin-bottom: 20px;
 }
