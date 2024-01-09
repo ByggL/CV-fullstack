@@ -75,6 +75,7 @@ footer {
 label {
 	font-size: x-large;
 	font-weight: bold;
+	text-decoration: underline #cf3333;
 }
 
 #submit {

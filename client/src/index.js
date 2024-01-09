@@ -1,26 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { extendTheme, ColorModeScript, ChakraProvider } from '@chakra-ui/react';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { extendTheme, ColorModeScript, ChakraProvider } from "@chakra-ui/react";
 
 const config = {
-  initialColorMode: 'light',
-  useSystemColorMode: false,
-}
+	initialColorMode: "light",
+	useSystemColorMode: false,
+};
 
-const theme = extendTheme({ config })
+const theme = extendTheme({ config });
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <>
-    <ColorModeScript initialColorMode={theme.config.initialColorMode}/>
-    <ChakraProvider theme={theme}>
-      <App />
-    </ChakraProvider>
-  </>
+	<>
+		<ColorModeScript initialColorMode={theme.config.initialColorMode} />
+		<ChakraProvider theme={theme}>
+			<App />
+		</ChakraProvider>
+	</>
 );
 
 // If you want to start measuring performance in your app, pass a function

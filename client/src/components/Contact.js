@@ -9,12 +9,12 @@ export function Contact() {
 			enctype="text/plain"
 			name="EmailForm">
 			<VStack>
-				<label for="name">Name:</label>
+				<label for="name">Nom</label>
 				<br />
 				<input type="text" id="name" name="name" />
 				<br />
 
-				<label for="ContactCommentt">Message:</label>
+				<label for="ContactCommentt">Message</label>
 				<br />
 				<textarea id="ContactCommentt" rows="6" cols="20" />
 				<br />
