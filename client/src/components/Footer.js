@@ -8,7 +8,7 @@ export function Footer() {
 				<HStack></HStack>
 				<Center>© 2024 Samuel Léobon, All Rights Reserved</Center>{" "}
 				<br />
-				<Center>Powered by : React, Chakra UI, Express.js</Center>
+				<Center>Powered by : React, Chakra UI, Express</Center>
 			</Box>
 		</footer>
 	);

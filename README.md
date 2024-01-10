@@ -39,3 +39,7 @@ CV-fullstack
 ├── package-lock.json
 └── .gitignore
 ```
+
+---
+
+© 2024 Samuel Léobon, All Rights Reserved
