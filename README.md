@@ -19,6 +19,11 @@ CV-fullstack
 │       ├── public
 │       ├── components
 │       ├── pages
+│       │   ├── Home.js
+│       │   ├── Formation.js
+│       │   ├── Experience.js
+│       │   ├── Competences.js
+│       │   └── Autres.js
 │       ├── App.css
 │       ├── App.js
 │       ├── index.css
