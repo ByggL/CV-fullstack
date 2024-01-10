@@ -20,41 +20,11 @@ import {
 	_renderSkills,
 	_renderLanguages,
 } from "../renderData.js";
-import { Footer } from "../components/Footer.js";
 import { Contact } from "../components/Contact.js";
+import { CategoryDivider } from "../components/CategoryDivider.js";
 import "../App.css";
 
-function CategoryDivider(props) {
-	return (
-		<Box position="relative" padding="10">
-			<Divider size="2xl" />
-			<AbsoluteCenter
-				bg="white"
-				px="4"
-				fontSize="xxx-large"
-				fontWeight="bold"
-				fontFamily="Liberation Mono">
-				{props.name}
-			</AbsoluteCenter>
-		</Box>
-	);
-}
-
 function Home() {
-	const [backendData, setBackendData] = useState([{}]);
-	const [isLoading, setLoading] = useState(true);
-
-	useEffect(() => {
-		fetch("/api")
-			.then((response) => response.json())
-			.then((data) => {
-				setBackendData(data);
-				setLoading(false);
-				console.log(data.skills);
-				console.log(Object.entries(data.skills));
-			});
-	}, []);
-
 	const slanted1 = {
 		transform: "rotate(65deg)",
 		backgroundColor: "#F2F2F2",
@@ -65,13 +35,6 @@ function Home() {
 		backgroundColor: "#F2F2F2",
 	};
 
-	if (isLoading) {
-		return (
-			<Heading className="App" size="7xl">
-				Loading...
-			</Heading>
-		);
-	}
 	return (
 		<>
 			<div className="content">
@@ -123,21 +86,6 @@ function Home() {
 					</Center>
 				</Box>
 				<div>
-					<CategoryDivider name="Formation" />
-					<Box>{_renderFormations(backendData)}</Box>
-					<CategoryDivider name="Expérience" />
-					<Box>{_renderExperience(backendData)}</Box>
-					<CategoryDivider name="Compétences" />
-					<Box>{_renderSkills(backendData)}</Box>
-					<CategoryDivider name="Autres" />
-					<Flex>
-						<Box float="left" width="50%">
-							{_renderInterests(backendData)}
-						</Box>
-						<Box float="left" width="50%">
-							{_renderLanguages(backendData)}
-						</Box>
-					</Flex>
 					<CategoryDivider name="Contact" />
 					<Contact />
 				</div>
