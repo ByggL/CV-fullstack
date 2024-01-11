@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
 	Image,
 	Text,
@@ -9,19 +9,7 @@ import {
 	StackDivider,
 	VStack,
 	Box,
-	AbsoluteCenter,
-	Divider,
-	Flex,
 } from "@chakra-ui/react";
-import {
-	_renderExperience,
-	_renderFormations,
-	_renderInterests,
-	_renderSkills,
-	_renderLanguages,
-} from "../renderData.js";
-import { Contact } from "../components/Contact.js";
-import { CategoryDivider } from "../components/CategoryDivider.js";
 import "../App.css";
 
 function Home() {
@@ -85,10 +73,6 @@ function Home() {
 						</HStack>
 					</Center>
 				</Box>
-				<div>
-					<CategoryDivider name="Contact" />
-					<Contact />
-				</div>
 			</div>
 			{/*<pre>{JSON.stringify(backendData, null, 2)}</pre>*/}
 			<div style={slanted1}></div>

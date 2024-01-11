@@ -14,7 +14,11 @@ export function Header() {
 		<header>
 			<Flex align="center" justify="space-between" bg="#CF3333">
 				<Center m="20px">
-					<Heading color="#222222">Samuel Léobon</Heading>
+					<a href="/">
+						<Heading color="#222222" className="headerTitle">
+							Samuel Léobon
+						</Heading>
+					</a>
 				</Center>
 				<Breadcrumb>
 					<BreadcrumbItem>
@@ -41,6 +45,10 @@ export function Header() {
 
 					<BreadcrumbItem>
 						<BreadcrumbLink href="/autres">Autres</BreadcrumbLink>
+					</BreadcrumbItem>
+
+					<BreadcrumbItem>
+						<BreadcrumbLink href="/contact">Contact</BreadcrumbLink>
 					</BreadcrumbItem>
 				</Breadcrumb>
 				<HStack m="20px">

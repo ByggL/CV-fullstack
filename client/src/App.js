@@ -8,6 +8,7 @@ import Formation from "./pages/Formation";
 import Experience from "./pages/Experience";
 import Competences from "./pages/Competences";
 import Autres from "./pages/Autres";
+import Contact from "./pages/Contact";
 import "./App.css";
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
 					element={<Competences data={backendData} />}
 				/>
 				<Route path="/autres" element={<Autres data={backendData} />} />
+				<Route path="/contact" element={<Contact />} />
 			</Routes>
 			<Footer />
 		</BrowserRouter>

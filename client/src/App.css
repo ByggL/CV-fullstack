@@ -81,3 +81,11 @@ label {
 #submit {
 	margin-bottom: 20px;
 }
+
+.headerTitle {
+	transition: color 0.3s ease-out;
+}
+
+.headerTitle:hover {
+	color: white;
+}
